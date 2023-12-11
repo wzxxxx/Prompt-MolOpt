@@ -9,4 +9,5 @@ The datasets, models and prediction
 
 
 
-The trained model, data and results can be download from the following link for reproduction  https://drive.google.com/file/d/1HZaWkHZGx9rwfzikRQqcieJCY0jh2lpw/view?usp=sharing. The environment (linux) for the code can be downloaded from the following link: https://drive.google.com/file/d/1HZaWkHZGx9rwfzikRQqcieJCY0jh2lpw/view?usp=sharing.
+The trained model, data and results can be download from the following link for reproduction https://drive.google.com/file/d/1QRS4ClwU9-HbYWsUccjGNBWup72fpntK/view?usp=sharing. The environment based on conda-pack (linux) for the code can be downloaded from the following link:  https://drive.google.com/file/d/1LJ8QzyI2bHxbZGfuXhlHNMnrKHJAcJbr/view?usp=sharing.
+
