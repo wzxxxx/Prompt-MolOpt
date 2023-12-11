@@ -9,4 +9,4 @@ The datasets, models and prediction
 
 
 
-The trained model, data and results can be download from the following link for reproduction  https://drive.google.com/file/d/1HZaWkHZGx9rwfzikRQqcieJCY0jh2lpw/view?usp=sharing.
+The trained model, data and results can be download from the following link for reproduction  https://drive.google.com/file/d/1HZaWkHZGx9rwfzikRQqcieJCY0jh2lpw/view?usp=sharing. The environment (linux) for the code can be downloaded from the following link: https://drive.google.com/file/d/1HZaWkHZGx9rwfzikRQqcieJCY0jh2lpw/view?usp=sharing.
