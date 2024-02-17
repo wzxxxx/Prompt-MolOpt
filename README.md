@@ -2,13 +2,13 @@
 
 ## Contents
 
-- [Overview](#Overview)
+- Overview
 
-- [Software Requirements](#Software Requirements)
+- Software Requirements
 
-- [Installation Guide](#Installation Guide)
+- Installation Guide
 
-- [Molecular optimization Case study Demo](#Molecular optimization Case study Demo)
+- Demo: Molecular optimization Case study
 
   
 
@@ -68,7 +68,7 @@ conda activate Prompt-MolOpt
 
 
 
-## Molecular optimization Case study Demo
+## Demo: Molecular optimization Case study
 
 Assume that the project is at `/root` and therefore the project path is /root/Prompt-MolOpt.
 
