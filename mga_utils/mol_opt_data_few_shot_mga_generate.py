@@ -153,7 +153,7 @@ def get_tgt_token_ids(tokens, vocab, max_len):
 # fix parameters of model
 def SME_pred_for_mols(smis, model_name='None', task_number=5, batch_size=128):
     args = {}
-    args['device'] = "cuda"
+    args['device'] = "cpu"
     args['node_data_field'] = 'node'
     args['edge_data_field'] = 'edge'
     args['substructure_mask'] = 'smask'

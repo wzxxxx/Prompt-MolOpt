@@ -240,8 +240,8 @@ if __name__ == '__main__':
 
     # parameter
     model_name = 'comparison_mol_opt_relabel'
-    s2s_file = './process_data/comparison_mol_opt_data/'
-    vocab_file = './process_data/comparison_mol_opt_data/comparison_vocab_smiles.txt'
+    s2s_file = '../process_data/comparison_mol_opt_data/'
+    vocab_file = '../process_data/comparison_mol_opt_data/comparison_vocab_smiles.txt'
     batch_size=128
     tag_list = ['drd2', 'plogp', 'qed']
     task_name='drd2 qed'

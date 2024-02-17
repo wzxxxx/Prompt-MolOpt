@@ -1,4 +1,4 @@
-name: graph2smiles
+name: Prompt-MolOpt
 channels:
   - rdkit
   - pytorch
@@ -129,4 +129,4 @@ dependencies:
     - waitress==2.0.0
     - werkzeug==2.0.3
     - zipp==3.6.0
-prefix: /home/zhenxingwu/miniconda3/envs/graph2smiles
+prefix: /home/zhenxingwu/miniconda3/envs/Prompt-MolOpt

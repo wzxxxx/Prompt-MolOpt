@@ -414,7 +414,7 @@ def get_tgt_token_ids(tokens, vocab, max_len):
 # fix parameters of model
 def SME_pred_for_mols(smis, model_name='None', task_number=5, batch_size=128):
     args = {}
-    args['device'] = "cuda"
+    args['device'] = "cpu"
     args['node_data_field'] = 'node'
     args['edge_data_field'] = 'edge'
     args['substructure_mask'] = 'smask'
@@ -494,9 +494,7 @@ def build_fs_data(data_file, model_name, tag_list, vocab, group='train', max_len
         if src_smi == 'CC':
             atom_idx_start = atom_idx_end
         else:
-            print(src_smi)
             src_token = tag_name_list[i].split() + ['[Pharmacophores]'] + tokenize_smiles(src_smi)
-            print(src_token)
             src_token_ids_i, src_lens_i, token_mga_feats_i = get_src_token_ids(src_token, vocab, src_embed_i,
                                                                                tag_indicator, max_len, src_atom_index)
             src_token_ids.append(src_token_ids_i)
@@ -550,9 +548,7 @@ if __name__ == '__main__':
     print('Remove mismatch is over.!')
 
     tag_list = ['Mutagenicity', 'hERG', 'BBBP', 'ESOL', 'lipop']
-    build_fs_data(data_file=data_file, model_name=model_name, tag_list=tag_list, vocab=vocab, group='valid', max_len=max_len, fs_file=val_fs_file, batch_size=batch_size)
     build_fs_data(data_file=data_file, model_name=model_name, tag_list=tag_list, vocab=vocab, group='test', max_len=max_len, fs_file=test_fs_file, batch_size=batch_size, test_file=test_file)
-    build_fs_data(data_file=data_file, model_name=model_name, tag_list=tag_list, vocab=vocab, group='train', max_len=max_len, fs_file=train_fs_file, batch_size=batch_size)
 
 
 

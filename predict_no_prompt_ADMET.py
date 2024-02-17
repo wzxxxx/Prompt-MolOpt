@@ -72,7 +72,7 @@ def main(args):
             raise ValueError(f"Model {args.model} not supported!")
 
         # initialization ----------------- vocab
-        vocab = load_vocab(pretrain_args.vocab_file)
+        vocab = load_vocab(args.vocab_file)
         vocab_tokens = [k for k, v in sorted(vocab.items(), key=lambda tup: tup[1])]
 
         model = model_class(pretrain_args, vocab)
@@ -166,6 +166,7 @@ if __name__ == "__main__":
     "result_file": "./result/Prompt_MolOpt_no_embed_ADMET_result.csv",
     "log_file": "Prompt_MolOpt_no_embed_ADMET_result.log",
     "load_from": "./checkpoints/s2s_no_prompt_data/model.500000_99.pt",
+    "vocab_file" : "./preprocessed/s2s_mga_data/vocab_smiles.txt",
     "seed": 1216,
     "batch_type": "tokens",
     "predict_batch_size": 4096,

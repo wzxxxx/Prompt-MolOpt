@@ -331,7 +331,7 @@ def load_vocab(vocab_file: str) -> Dict[str, int]:
     if os.path.exists(vocab_file):
         logging.info(f"Loading vocab from {vocab_file}")
     else:
-        vocab_file = "./preprocessed/default_vocab_smiles.txt"
+        vocab_file = "../preprocessed/default_vocab_smiles.txt"
         logging.info(f"Vocab file invalid, loading default vocab from {vocab_file}")
 
     vocab = {}

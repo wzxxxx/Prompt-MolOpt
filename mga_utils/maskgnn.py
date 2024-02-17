@@ -667,8 +667,8 @@ class EarlyStopping(object):
                  former_task_name="None"):
         if filename is None:
             task_name = task_name
-            filename = './checkpoints/mga/{}_early_stop.pth'.format(task_name)
-        former_filename = './checkpoints/mga/{}_early_stop.pth'.format(former_task_name)
+            filename = '../checkpoints/mga/{}_early_stop.pth'.format(task_name)
+        former_filename = '../checkpoints/mga/{}_early_stop.pth'.format(former_task_name)
         
         assert mode in ['higher', 'lower']
         self.mode = mode
@@ -683,7 +683,7 @@ class EarlyStopping(object):
         self.former_filename = former_filename
         self.best_score = None
         self.early_stop = False
-        self.pretrained_model = './checkpoints/mga/' + pretrained_model
+        self.pretrained_model = '../checkpoints/mga/' + pretrained_model
     
     def _check_higher(self, score, prev_best_score):
         return (score > prev_best_score)
