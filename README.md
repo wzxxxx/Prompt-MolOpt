@@ -5,7 +5,7 @@
 - [Overview](#overview)
 - [Software Requirements](#software-requirements)
 - [Installation Guide](#installation-guide)
-- [Demo: Molecular optimization case study](#demo-Molecular optimization case study)
+- [Demo: Molecular optimization case study](#Demo: Molecular optimization Case study)
 
 ## Overview
 
