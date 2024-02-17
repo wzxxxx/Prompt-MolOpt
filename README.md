@@ -3,9 +3,14 @@
 ## Contents
 
 - [Overview](#overview)
+
 - [Software Requirements](#software-requirements)
+
 - [Installation Guide](#installation-guide)
-- [Demo: Molecular optimization case study](#Demo|Molecular optimization Case study)
+
+- [Demo: Molecular optimization case study](#Demo： Molecular optimization Case study)
+
+  
 
 ## Overview
 
@@ -61,7 +66,7 @@ tar -xzvf Prompt-MolOpt.tar.gz -C ${anaconda install dir}/anaconda3/envs/Prompt-
 conda activate Prompt-MolOpt
 ```
 
-## <a name="Demo|Molecular optimization Case study"></a>Demo|Molecular optimization Case study
+## <a name="Demo： Molecular optimization Case study"></a>Demo： Molecular optimization Case study
 
 Assume that the project is at `/root` and therefore the project path is /root/Prompt-MolOpt.
 
