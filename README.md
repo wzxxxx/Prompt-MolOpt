@@ -56,6 +56,8 @@ you can install the env via yaml file
 ```
 cd Prompt-MolOpt
 conda env create -f PromptMOlOpt.yaml
+conda activate Prompt-MolOpt
+pip install hyperopt
 ```
 
 or you can download the [conda-packed file](https://drive.google.com/file/d/1LJ8QzyI2bHxbZGfuXhlHNMnrKHJAcJbr/view?usp=sharing), and then unzip it in `${anaconda install dir}/anaconda3/envs`. `${anaconda install dir}` represents the dir where the anaconda is installed. For me, ${anaconda install dir}=/root .
@@ -64,6 +66,7 @@ or you can download the [conda-packed file](https://drive.google.com/file/d/1LJ8
 mkdir ${anaconda install dir}/anaconda3/envs/Prompt-MolOpt 
 tar -xzvf Prompt-MolOpt.tar.gz -C ${anaconda install dir}/anaconda3/envs/Prompt-MolOpt
 conda activate Prompt-MolOpt
+pip install hyperopt
 ```
 
 
