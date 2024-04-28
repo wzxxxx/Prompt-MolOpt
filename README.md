@@ -1,6 +1,6 @@
 # Prompt-MolOpt: **Leveraging Language Model for Advanced Multi-Property Molecular Optimization via Prompt Engineering**
 
-## Contents [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11078661.svg)](https://doi.org/10.5281/zenodo.11078661)
+## Contents
 
 - Overview
 
