@@ -50,7 +50,7 @@ pandas
 ### download this repo
 
 ```
-git clone https://github.com/wzxxxx/Prompt-MolOpt.git
+git clone https://github.com/wzxxxx/Prompt_MolOpt.git
 ```
 
 Given the large size of the codebase, cloning via Git may be interrupted. Alternatively, consider downloading the ZIP file from the website and extracting it for use.
@@ -60,14 +60,14 @@ Given the large size of the codebase, cloning via Git may be interrupted. Altern
 you can install the env via yaml file
 
 ```
-cd Prompt-MolOpt
+cd Prompt_MolOpt
 conda env create -f PromptMOlOpt.yaml
 ```
 
 or you can download the [conda-packed file](https://drive.google.com/file/d/1LJ8QzyI2bHxbZGfuXhlHNMnrKHJAcJbr/view?usp=sharing), and then unzip it in `${anaconda install dir}/anaconda3/envs`. `${anaconda install dir}` represents the dir where the anaconda is installed. For me, ${anaconda install dir}=/root .
 
 ```
-mkdir ${anaconda install dir}/anaconda3/envs/Prompt-MolOpt 
+mkdir ${anaconda install dir}/anaconda3/envs/Prompt_MolOpt 
 tar -xzvf Prompt-MolOpt.tar.gz -C ${anaconda install dir}/anaconda3/envs/Prompt-MolOpt
 conda activate Prompt-MolOpt
 ```
@@ -76,7 +76,7 @@ conda activate Prompt-MolOpt
 
 ## The construction of Prompt-MolOpt
 
-Assume that the project is at `/root` and therefore the project path is `/root/Prompt-MolOpt`.
+Assume that the project is at `/root` and therefore the project path is `/root/Prompt_MolOpt`.
 
 As shown in Figure 1, the construction process of Prompt-MolOpt can be divided into four steps:
 
@@ -86,27 +86,27 @@ Initially, models for predicting molecular properties is constructed using molec
 
 ### 2. **Creating Molecular Optimization Datasets**
 
-Here, we'll explain how to construct molecular optimization pairs using Substructure Mask Explanation (SME), Drugbank datasets, and a molecular property dataset through the `/root/Prompt-MolOpt/SME_opt/Molecular_optimized_pair_generator.ipynb` script. Ultimately, the molecular pair dataset created for ADMET property optimization will be stored as `/root/Prompt-MolOpt/data/origin_data/mol_opt_data.csv`.
+Here, we'll explain how to construct molecular optimization pairs using Substructure Mask Explanation (SME), Drugbank datasets, and a molecular property dataset through the `/root/Prompt_MolOpt/SME_opt/Molecular_optimized_pair_generator.ipynb` script. Ultimately, the molecular pair dataset created for ADMET property optimization will be stored in `/root/Prompt_MolOpt/data/origin_data`.
 
 ### 3. **Developing MGA models to generate property-related atomic token embeddings**
 
 A multi-task molecular property prediction model is developed utilizing the molecules from the training molecular pairs. The molecules with prediction values in the training molecular pairs are random split into training, validation, and test sets .
 
-(`/root/Prompt-MolOpt/data/origin_data/ADMET_data_for_MGA.csv`) . These molecules are  utilized for the construction of the Multi-Graph Attention (MGA) model, and the MGA model are designed to generate property-related atomic token embeddings. Build the MGA models:
+(`/root/Prompt_MolOpt/data/origin_data/ADMET_data_for_MGA.csv`) . These molecules are  utilized for the construction of the Multi-Graph Attention (MGA) model, and the MGA model are designed to generate property-related atomic token embeddings. Build the MGA models:
 
 ```
-cd /root/Prompt-MolOpt/mga_utils
+cd /root/Prompt_MolOpt/mga_utils
 python build_graph_dataset.py --task_name ADMET_data_for_MGA
 python Main.py --task_name ADMET_data_for_MGA
 ```
 
-The generated models are saved at /root/Prompt-MolOpt/checkpoints/mga
+The generated models are saved at /root/Prompt_MolOpt/checkpoints/mga
 
 ### 4. **Constructing the Prompt-MolOpt Model**
 
 ```
-cd /root/Prompt-MolOpt/mga_utils
-# generate datasets for Prompt-MolOpt, and the datasets are saved in /root/Prompt-MolOpt/preprocessed
+cd /root_Prompt_MolOpt/mga_utils
+# generate datasets for Prompt-MolOpt, and the datasets are saved in /root/Prompt_MolOpt/preprocessed
 python mol_opt_data_mga_generate.py 
 # train the Prompt-MolOpt Model
 sh Prompt_molopt_train.sh
@@ -118,14 +118,14 @@ Finally, utilizing the molecular optimization dataset and the property-related a
 
 ## Demo: Molecular optimization Case study
 
-Assume that the project is at `/root` and therefore the project path is /root/Prompt-MolOpt.
+Assume that the project is at `/root` and therefore the project path is /root/Prompt_MolOpt.
 
 ### 1. Generate the preprocessed data.
 
-The source data is in the /root/Prompt-MolOpt/data/hERG_BBBP_case_study_test_0.csv. First, generate the preprocessed data for Prompt-MolOptP.
+The source data is in the /root/Prompt_MolOpt/data/hERG_BBBP_case_study_test_0.csv. First, generate the preprocessed data for Prompt-MolOptP.
 
 ```
-cd /root/Prompt-MolOpt/mga_utils
+cd /root/Prompt_MolOpt/mga_utils
 python mol_opt_data_remark_mga_generate_test.py
 ```
 
@@ -135,10 +135,10 @@ python mol_opt_data_remark_mga_generate_test.py
 
 ### 2. Generate optimized molecules.
 
-The purpose of this step is generate optimized molecules. The outcome, including the optimized molecules, will be saved in `/root/Prompt-MolOpt/PromptP_molopt_hERG_BBBP_case_study_result.csv`, which should match the contents of `PromptP_molopt_hERG_BBBP_case_study_result_demo.csv`. 
+The purpose of this step is generate optimized molecules. The outcome, including the optimized molecules, will be saved in `/root/Prompt_MolOpt/PromptP_molopt_hERG_BBBP_case_study_result.csv`, which should match the contents of `PromptP_molopt_hERG_BBBP_case_study_result_demo.csv`. 
 
 ```
-cd /root/Prompt-MolOpt
+cd /root/Prompt_MolOpt
 python predict_prompt_hERG_BBBP_case_study.py
 ```
 
@@ -146,8 +146,8 @@ The above steps help to replicate the results of case study reported in the stud
 
 ### 3. Visualization of the result
 
-To visualize the optimized molecules, you should run the provided Jupyter notebook located at `/root/Prompt-MolOpt/result/PromptP-Molopt-hERG-BBBP-case-study-visual.ipynb`. A pre-run version of this notebook has already been provided for reference. 
+To visualize the optimized molecules, you should run the provided Jupyter notebook located at `/root/Prompt_MolOpt/result/PromptP-Molopt-hERG-BBBP-case-study-visual.ipynb`. A pre-run version of this notebook has already been provided for reference. 
 
 ### 4. Replicating Study Results
 
-To replicate the results reported in the paper, the necessary data and code to reproduce these findings are provided in the `/root/Prompt-MolOpt/result` directory.
+To replicate the results reported in the paper, the necessary data and code to reproduce these findings are provided in the `/root/Prompt_MolOpt/result` directory.
