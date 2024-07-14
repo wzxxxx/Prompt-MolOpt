@@ -483,49 +483,6 @@ h2l_num = 1000
 opt_dataset_generate(l2h_num, h2l_num, task_name, data_name, model_name, sub_name, opt_num, re_opt_num)
 
 
-# task_name = 'BBBP'
-# data_name = task_name
-# model_name = task_name
-# sub_name = 'drugbank'
-# opt_num = 5
-# re_opt_num = 3
-# l2h_num = 400
-# h2l_num = 1000
-# opt_dataset_generate(l2h_num, h2l_num, task_name, data_name, model_name, sub_name, opt_num, re_opt_num)
-
-#
-# task_name = 'ESOL'
-# data_name = task_name
-# model_name = task_name
-# sub_name = 'drugbank'
-# opt_num = 5
-# re_opt_num = 3
-# l2h_num = 800
-# h2l_num = 800
-# opt_dataset_generate(l2h_num, h2l_num, task_name, data_name, model_name, sub_name, opt_num, re_opt_num)
-#
-#
-# task_name = 'hERG'
-# data_name = task_name
-# model_name = task_name
-# sub_name = 'drugbank'
-# opt_num = 5
-# re_opt_num = 3
-# l2h_num = 2000
-# h2l_num = 2000
-# opt_dataset_generate(l2h_num, h2l_num, task_name, data_name, model_name, sub_name, opt_num, re_opt_num)
-#
-#
-# task_name = 'Mutagenicity'
-# data_name = task_name
-# model_name = task_name
-# sub_name = 'drugbank'
-# opt_num = 5
-# re_opt_num = 3
-# l2h_num = 2000
-# h2l_num = 2000
-# opt_dataset_generate(l2h_num, h2l_num, task_name, data_name, model_name, sub_name, opt_num, re_opt_num)
-
 
 
 

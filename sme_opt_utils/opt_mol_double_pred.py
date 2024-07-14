@@ -223,91 +223,18 @@ for generate_data_name in ['Mutagenicity_ESOL', 'Mutagenicity_lipop', 'BBBP_lipo
                 generate_data[f'origin_pred_{model_name}'] = origin_pred_list
                 generate_data[f'opt_pred_{model_name}'] = opt_pred_list
         # 对数据做简单处理，删除不成功的分子，并添加标签(类似数据扩充)
-        if (generate_data_name == 'Mutagenicity_ESOL') & (mode=='higher'):
+        if (generate_data_name == 'Mutagenicity_BBBP') & (mode=='higher'):
             generate_data = generate_data[(generate_data['origin_pred_Mutagenicity']<0.5)&(generate_data['opt_pred_Mutagenicity']>=0.5)]
-            generate_data = generate_data[(generate_data['origin_pred_ESOL']-generate_data['opt_pred_ESOL'])>=0.5]
-            generate_data['task_name'] = ['Mutagenicity ESOL' for x in range(len(generate_data))]
-            generate_data_2 = generate_data.copy()
-            generate_data_2['task_name'] = ['ESOL Mutagenicity' for x in range(len(generate_data))]
-            generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        if (generate_data_name == 'Mutagenicity_ESOL') & (mode=='lower'):
-            generate_data = generate_data[(generate_data['origin_pred_Mutagenicity']>=0.5)&(generate_data['opt_pred_Mutagenicity']<0.5)]
-            generate_data = generate_data[(generate_data['origin_pred_ESOL']-generate_data['opt_pred_ESOL'])<=-0.5]
-            generate_data['task_name'] = ['Mutagenicity ESOL' for x in range(len(generate_data))]
-            generate_data_2 = generate_data.copy()
-            generate_data_2['task_name'] = ['ESOL Mutagenicity' for x in range(len(generate_data))]
-            generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        
-        if (generate_data_name == 'Mutagenicity_lipop') & (mode=='higher'):
-            generate_data = generate_data[(generate_data['origin_pred_Mutagenicity']<0.5)&(generate_data['opt_pred_Mutagenicity']>=0.5)]
-            generate_data = generate_data[(generate_data['origin_pred_lipop']-generate_data['opt_pred_lipop'])>=0.5]
-            generate_data['task_name'] = ['Mutagenicity lipop' for x in range(len(generate_data))]
-            generate_data_2 = generate_data.copy()
-            generate_data_2['task_name'] = ['lipop Mutagenicity' for x in range(len(generate_data))]
-            generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        if (generate_data_name == 'Mutagenicity_lipop') & (mode=='lower'):
-            generate_data = generate_data[(generate_data['origin_pred_Mutagenicity']>=0.5)&(generate_data['opt_pred_Mutagenicity']<0.5)]
-            generate_data = generate_data[(generate_data['origin_pred_lipop']-generate_data['opt_pred_lipop'])<=-0.5]
-            generate_data['task_name'] = ['Mutagenicity lipop' for x in range(len(generate_data))]
-            generate_data_2 = generate_data.copy()
-            generate_data_2['task_name'] = ['lipop Mutagenicity' for x in range(len(generate_data))]
-            generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-            
-        if (generate_data_name == 'BBBP_lipop') & (mode=='higher'):
-            generate_data = generate_data[(generate_data['origin_pred_BBBP']<0.5)&(generate_data['opt_pred_BBBP']>=0.5)]
-            generate_data = generate_data[(generate_data['origin_pred_lipop']-generate_data['opt_pred_lipop'])<=-0.5]
-            generate_data['task_name'] = ['BBBP lipop' for x in range(len(generate_data))]
-            generate_data_2 = generate_data.copy()
-            generate_data_2['task_name'] = ['lipop BBBP' for x in range(len(generate_data))]
-            generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        if (generate_data_name == 'BBBP_lipop') & (mode=='lower'):
             generate_data = generate_data[(generate_data['origin_pred_BBBP']>=0.5)&(generate_data['opt_pred_BBBP']<0.5)]
-            generate_data = generate_data[(generate_data['origin_pred_lipop']-generate_data['opt_pred_lipop'])>=-0.5]
-            generate_data['task_name'] = ['BBBP lipop' for x in range(len(generate_data))]
+            generate_data['task_name'] = ['Mutagenicity BBBP' for x in range(len(generate_data))]
             generate_data_2 = generate_data.copy()
-            generate_data_2['task_name'] = ['lipop BBBP' for x in range(len(generate_data))]
+            generate_data_2['task_name'] = ['BBBP Mutagenicity' for x in range(len(generate_data))]
             generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        
-        # if (generate_data_name == 'hERG_ESOL') & (mode=='higher'):
-        #     generate_data = generate_data[(generate_data['origin_pred_hERG']<0.5)&(generate_data['opt_pred_hERG']>=0.5)]
-        #     generate_data = generate_data[(generate_data['origin_pred_ESOL']-generate_data['opt_pred_ESOL'])>=0.5]
-        #     generate_data['task_name'] = ['hERG ESOL' for x in range(len(generate_data))]
-        #     generate_data_2 = generate_data.copy()
-        #     generate_data_2['task_name'] = ['ESOL hERG' for x in range(len(generate_data))]
-        #     generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        # if (generate_data_name == 'hERG_ESOL') & (mode=='lower'):
-        #     generate_data = generate_data[(generate_data['origin_pred_hERG']>=0.5)&(generate_data['opt_pred_hERG']<0.5)]
-        #     generate_data = generate_data[(generate_data['origin_pred_ESOL']-generate_data['opt_pred_ESOL'])<=-0.5]
-        #     generate_data['task_name'] = ['hERG ESOL' for x in range(len(generate_data))]
-        #     generate_data_2 = generate_data.copy()
-        #     generate_data_2['task_name'] = ['ESOL hERG' for x in range(len(generate_data))]
-        #     generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        # if (generate_data_name == 'Mutagenicity_BBBP') & (mode=='higher'):
-        #     generate_data = generate_data[(generate_data['origin_pred_Mutagenicity']<0.5)&(generate_data['opt_pred_Mutagenicity']>=0.5)]
-        #     generate_data = generate_data[(generate_data['origin_pred_BBBP']>=0.5)&(generate_data['opt_pred_BBBP']<0.5)]
-        #     generate_data['task_name'] = ['Mutagenicity BBBP' for x in range(len(generate_data))]
-        #     generate_data_2 = generate_data.copy()
-        #     generate_data_2['task_name'] = ['BBBP Mutagenicity' for x in range(len(generate_data))]
-        #     generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        # if (generate_data_name == 'Mutagenicity_BBBP') & (mode=='lower'):
-        #     generate_data = generate_data[(generate_data['origin_pred_Mutagenicity']>=0.5)&(generate_data['opt_pred_Mutagenicity']<0.5)]
-        #     generate_data = generate_data[(generate_data['origin_pred_BBBP']<0.5)&(generate_data['opt_pred_BBBP']>=0.5)]
-        #     generate_data['task_name'] = ['Mutagenicity BBBP' for x in range(len(generate_data))]
-        #     generate_data_2 = generate_data.copy()
-        #     generate_data_2['task_name'] = ['BBBP Mutagenicity' for x in range(len(generate_data))]
-        #     generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        # if (generate_data_name == 'hERG_Mutagenicity') & (mode=='higher'):
-        #     generate_data = generate_data[(generate_data['origin_pred_hERG']<0.5)&(generate_data['opt_pred_hERG']>=0.5)]
-        #     generate_data = generate_data[(generate_data['origin_pred_Mutagenicity']<0.5)&(generate_data['opt_pred_Mutagenicity']>=0.5)]
-        #     generate_data['task_name'] = ['hERG Mutagenicity' for x in range(len(generate_data))]
-        #     generate_data_2 = generate_data.copy()
-        #     generate_data_2['task_name'] = ['Mutagenicity hERG' for x in range(len(generate_data))]
-        #     generate_data = pd.concat([generate_data, generate_data_2], axis=0)
-        # if (generate_data_name == 'hERG_Mutagenicity') & (mode=='lower'):
-        #     generate_data = generate_data[(generate_data['origin_pred_hERG']>=0.5)&(generate_data['opt_pred_hERG']<0.5)]
-        #     generate_data = generate_data[(generate_data['origin_pred_Mutagenicity']>=0.5)&(generate_data['opt_pred_Mutagenicity']<0.5)]
-        #     generate_data['task_name'] = ['hERG Mutagenicity' for x in range(len(generate_data))]
-        #     generate_data_2 = generate_data.copy()
-        #     generate_data_2['task_name'] = ['Mutagenicity hERG' for x in range(len(generate_data))]
-        #     generate_data = pd.concat([generate_data, generate_data_2], axis=0)
+        if (generate_data_name == 'Mutagenicity_BBBP') & (mode=='lower'):
+            generate_data = generate_data[(generate_data['origin_pred_Mutagenicity']>=0.5)&(generate_data['opt_pred_Mutagenicity']<0.5)]
+            generate_data = generate_data[(generate_data['origin_pred_BBBP']<0.5)&(generate_data['opt_pred_BBBP']>=0.5)]
+            generate_data['task_name'] = ['Mutagenicity BBBP' for x in range(len(generate_data))]
+            generate_data_2 = generate_data.copy()
+            generate_data_2['task_name'] = ['BBBP Mutagenicity' for x in range(len(generate_data))]
+            generate_data = pd.concat([generate_data, generate_data_2], axis=0)
         generate_data.to_csv('../data/generate_data/re_opt_{}_{}_data_pred.csv'.format(generate_data_name, mode))

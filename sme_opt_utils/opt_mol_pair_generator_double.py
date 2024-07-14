@@ -511,134 +511,28 @@ def generate_re_opt_different_prop_data(data_name, model_name, sub_name, sub_num
     opt_data.to_csv('../data/generate_data/re_opt_{}_{}_{}_data.csv'.format(data_name, model_name, first_mode), index=False)
 
 if __name__ == '__main__':
-    # task_name = 'Mutagenicity'
-    #
-    # data_name = task_name
-    # model_name = 'BBBP'
-    # sub_name = 'drugbank'
-    # sub_num = 5
-    #
-    #
-    # # low -> high
-    # print('{} low -> high, {} high -> low'.format(task_name, model_name))
-    # first_mode = 'higher'
-    #
-    # second_mode = 'lower'
-    # generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    # generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=2046)
-    #
-    # # high -> low
-    # print('{} high -> low'.format(task_name))
-    # first_mode = 'lower'
-    # second_mode = 'higher'
-    # generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    # generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,  random_seed=2046)
+    task_name = 'Mutagenicity'
 
-
-
-    # task_name = 'hERG'
-    #
-    # data_name = task_name
+    data_name = task_name
+    model_name = 'BBBP'
     sub_name = 'drugbank'
-    # model_name = 'Mutagenicity'
+    sub_num = 5
 
 
-    # # low -> high
-    # print('{} low -> high, {} high -> low'.format(task_name, model_name))
-    # first_mode = 'higher'
-    #
-    # second_mode = 'higher'
-    # generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    # generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=2046)
-
-    # # high -> low
-    # print('{} high -> low'.format(task_name))
-    # first_mode = 'lower'
-    # second_mode = 'lower'
-    # # generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    # generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,  random_seed=2046)
-
-
-    # task_name = 'hERG'
-    # data_name = task_name
-    # model_name = 'ESOL'
-    # # low -> high
-    # print('{} low -> high, {} high -> low'.format(task_name, model_name))
-    # first_mode = 'higher'
-    # second_mode = 'lower'
-    # generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    # generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,
-    #                                     random_seed=2046)
-    #
-    # # high -> low
-    # print('{} high -> low'.format(task_name))
-    # first_mode = 'lower'
-    # second_mode = 'higher'
-    # generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    # generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,
-    #                                     random_seed=2046)
-
-
-    task_name = 'Mutagenicity'
-    data_name = task_name
-    model_name = 'ESOL'
     # low -> high
     print('{} low -> high, {} high -> low'.format(task_name, model_name))
     first_mode = 'higher'
+
     second_mode = 'lower'
     generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,
-                                        random_seed=2046)
+    generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=2046)
 
     # high -> low
     print('{} high -> low'.format(task_name))
     first_mode = 'lower'
     second_mode = 'higher'
     generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,
-                                        random_seed=2046)
-
-
-
-    task_name = 'Mutagenicity'
-    data_name = task_name
-    model_name = 'lipop'
-    # low -> high
-    print('{} low -> high, {} high -> low'.format(task_name, model_name))
-    first_mode = 'higher'
-    second_mode = 'lower'
-    generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,
-                                        random_seed=2046)
-
-    # high -> low
-    print('{} high -> low'.format(task_name))
-    first_mode = 'lower'
-    second_mode = 'higher'
-    generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,
-                                        random_seed=2046)
-
-
-    task_name = 'BBBP'
-    data_name = task_name
-    model_name = 'lipop'
-    # low -> high
-    print('{} low -> high, {} high -> low'.format(task_name, model_name))
-    first_mode = 'higher'
-    second_mode = 'higher'
-    generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,
-                                        random_seed=2046)
-
-    # high -> low
-    print('{} high -> low'.format(task_name))
-    first_mode = 'lower'
-    second_mode = 'lower'
-    generate_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode, random_seed=1216)
-    generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,
-                                        random_seed=2046)
-
+    generate_re_opt_different_prop_data(data_name, model_name, sub_name, 2, first_mode=first_mode, second_mode=second_mode,  random_seed=2046)
 
 
 
