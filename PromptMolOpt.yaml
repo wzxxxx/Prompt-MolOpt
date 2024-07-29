@@ -1,4 +1,4 @@
-name: Prompt-MolOpt
+name: Prompt_MolOpt
 channels:
   - rdkit
   - pytorch

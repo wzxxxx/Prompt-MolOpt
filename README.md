@@ -68,8 +68,8 @@ or you can download the [conda-packed file](https://drive.google.com/file/d/1LJ8
 
 ```
 mkdir ${anaconda install dir}/anaconda3/envs/Prompt_MolOpt 
-tar -xzvf Prompt-MolOpt.tar.gz -C ${anaconda install dir}/anaconda3/envs/Prompt-MolOpt
-conda activate Prompt-MolOpt
+tar -xzvf Prompt_MolOpt_env.tar.gz -C ${anaconda install dir}/anaconda3/envs/Prompt_MolOpt
+conda activate Prompt_MolOpt
 ```
 
 
