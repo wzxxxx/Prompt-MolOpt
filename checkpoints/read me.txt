@@ -1,5 +1,5 @@
 comparison_model_opt data: Prompt_MolOpt model for QED and DRD2
-fs comparison_model_opt data: Prompt_MolOpt model for QED and DRD2 (zero-shot)
+fs_comparison_model_opt data: Prompt_MolOpt model for QED and DRD2 (zero-shot)
 fs_mga_data: Prompt_MolOpt model for ADMET (few-shot)
 fs_mga remark_data: Prompt_MolOptP model for ADMET (few-shot)
 mga: MGA models used for embedding generating
